@@ -29,7 +29,7 @@ func bounds(n, parts, p int) (int, int) {
 	return from, to
 }
 
-// 1. goroutines + WaitGroup + слайс результатів
+
 func sumWG(a []int8, parts int) int64 {
 	res := make([]int64, parts)
 	var wg sync.WaitGroup
@@ -49,7 +49,6 @@ func sumWG(a []int8, parts int) int64 {
 	return total
 }
 
-// 2. канали
 func sumChan(a []int8, parts int) int64 {
 	ch := make(chan int64, parts)
 	for p := 0; p < parts; p++ {
@@ -65,7 +64,7 @@ func sumChan(a []int8, parts int) int64 {
 	return total
 }
 
-// 3. Mutex: один Lock на потік, наприкінці
+
 func sumMutex(a []int8, parts int) int64 {
 	var mu sync.Mutex
 	var wg sync.WaitGroup
@@ -85,7 +84,7 @@ func sumMutex(a []int8, parts int) int64 {
 	return total
 }
 
-// 4. "поганий" варіант: atomic на кожен елемент
+
 func sumAtomicBad(a []int8, parts int) int64 {
 	var total atomic.Int64
 	var wg sync.WaitGroup
@@ -131,7 +130,6 @@ func main() {
 		bench("mutex", func() int64 { return sumMutex(a, parts) })
 	}
 
-	// atomic на кожен елемент запускайте на меншому масиві, інакше чекатимете дуже довго
 	small := a[:50_000_000]
 	fmt.Println("--- atomic (bad), 50M elements")
 	bench("seq (50M)", func() int64 { return sumSeq(small) })
