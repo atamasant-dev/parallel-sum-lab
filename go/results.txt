@@ -1,0 +1,24 @@
+sequential       sum=49500000000  median=375 ms  min=372 ms
+--- parts = 1
+waitgroup        sum=49500000000  median=373 ms  min=372 ms
+channels         sum=49500000000  median=372 ms  min=371 ms
+mutex            sum=49500000000  median=371 ms  min=371 ms
+--- parts = 2
+waitgroup        sum=49500000000  median=195 ms  min=195 ms
+channels         sum=49500000000  median=196 ms  min=195 ms
+mutex            sum=49500000000  median=195 ms  min=195 ms
+--- parts = 4
+waitgroup        sum=49500000000  median=101 ms  min=101 ms
+channels         sum=49500000000  median=101 ms  min=101 ms
+mutex            sum=49500000000  median=101 ms  min=101 ms
+--- parts = 8
+waitgroup        sum=49500000000  median=60 ms  min=59 ms
+channels         sum=49500000000  median=60 ms  min=60 ms
+mutex            sum=49500000000  median=61 ms  min=60 ms
+--- parts = 16
+waitgroup        sum=49500000000  median=65 ms  min=64 ms
+channels         sum=49500000000  median=61 ms  min=59 ms
+mutex            sum=49500000000  median=67 ms  min=61 ms
+--- atomic (bad), 50M elements
+seq (50M)        sum=2475000000  median=19 ms  min=19 ms
+atomic/element   sum=2475000000  median=1717 ms  min=1663 ms
