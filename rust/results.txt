@@ -1,0 +1,29 @@
+sequential       sum=49500000000  median=20 ms  min=20 ms
+--- parts = 1
+scope            sum=49500000000  median=20 ms  min=20 ms
+channels         sum=49500000000  median=20 ms  min=20 ms
+mutex            sum=49500000000  median=20 ms  min=20 ms
+rayon            sum=49500000000  median=21 ms  min=20 ms
+--- parts = 2
+scope            sum=49500000000  median=17 ms  min=16 ms
+channels         sum=49500000000  median=17 ms  min=16 ms
+mutex            sum=49500000000  median=16 ms  min=16 ms
+rayon            sum=49500000000  median=16 ms  min=16 ms
+--- parts = 4
+scope            sum=49500000000  median=16 ms  min=16 ms
+channels         sum=49500000000  median=15 ms  min=15 ms
+mutex            sum=49500000000  median=15 ms  min=15 ms
+rayon            sum=49500000000  median=15 ms  min=15 ms
+--- parts = 8
+scope            sum=49500000000  median=15 ms  min=15 ms
+channels         sum=49500000000  median=15 ms  min=15 ms
+mutex            sum=49500000000  median=15 ms  min=15 ms
+rayon            sum=49500000000  median=15 ms  min=15 ms
+--- parts = 16
+scope            sum=49500000000  median=15 ms  min=15 ms
+channels         sum=49500000000  median=16 ms  min=16 ms
+mutex            sum=49500000000  median=16 ms  min=16 ms
+rayon            sum=49500000000  median=16 ms  min=16 ms
+--- atomic (bad), 50M elements
+seq (50M)        sum=2475000000  median=1 ms  min=1 ms
+atomic/element   sum=2475000000  median=938 ms  min=897 ms
